@@ -1,3 +1,5 @@
+[![Test Automation](https://github.com/heyrmi/framework/actions/workflows/test-automation.yml/badge.svg)](https://github.com/heyrmi/framework/actions/workflows/test-automation.yml)
+
 # Full Stack SDET Framework
 
 A production-grade test automation framework built with Java 21, covering Web, API, Mobile, and Performance testing. Designed for real-world adoption and structured around industry-standard design patterns.
