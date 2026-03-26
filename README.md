@@ -146,7 +146,7 @@ This supports 12-factor app conventions and makes CI overrides straightforward w
 
 ```bash
 # Clone and build
-git clone <repository-url>
+git clone https://github.com/heyrmi/framework
 cd framework
 mvn clean compile
 
