@@ -17,12 +17,6 @@ public class FramesPage extends BasePage {
         return this;
     }
 
-    @Step("Open nested frames page")
-    public FramesPage openNestedFrames() {
-        navigateToPath(Endpoints.NESTED_FRAMES);
-        return this;
-    }
-
     @Step("Get iFrame text content")
     public String getIFrameText() {
         WaitUtils.waitForVisible(iframeElement);
@@ -41,14 +35,6 @@ public class FramesPage extends BasePage {
         body.sendKeys(text);
         switchToDefaultContent();
         return this;
-    }
-
-    @Step("Get nested frame text")
-    public String getNestedFrameText(String frameName) {
-        switchToFrame(By.cssSelector("frame[name='" + frameName + "']"));
-        String text = getDriver().findElement(By.tagName("body")).getText();
-        switchToDefaultContent();
-        return text;
     }
 
     @Override

@@ -69,10 +69,6 @@ public final class ConfigManager {
         }
     }
 
-    public static int getInt(String key) {
-        return Integer.parseInt(get(key));
-    }
-
     public static int getIntOrDefault(String key, int defaultValue) {
         try {
             return Integer.parseInt(get(key));
@@ -83,10 +79,6 @@ public final class ConfigManager {
 
     public static boolean getBoolean(String key) {
         return Boolean.parseBoolean(get(key));
-    }
-
-    public static long getLong(String key) {
-        return Long.parseLong(get(key));
     }
 
     public static long getLongOrDefault(String key, long defaultValue) {

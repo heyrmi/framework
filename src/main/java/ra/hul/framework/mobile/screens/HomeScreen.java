@@ -15,7 +15,6 @@ public class HomeScreen extends BaseScreen {
     private final By loginTab = AppiumBy.accessibilityId("Login");
     private final By formsTab = AppiumBy.accessibilityId("Forms");
     private final By swipeTab = AppiumBy.accessibilityId("Swipe");
-    private final By dragTab = AppiumBy.accessibilityId("Drag");
 
     @Step("Navigate to Home tab")
     public HomeScreen navigateToHome() {

@@ -13,11 +13,8 @@ public final class Endpoints {
     public static final String FILE_UPLOAD = "/upload";
     public static final String FILE_DOWNLOAD = "/download";
     public static final String JS_ALERTS = "/javascript_alerts";
-    public static final String FRAMES = "/frames";
     public static final String IFRAME = "/iframe";
-    public static final String NESTED_FRAMES = "/nested_frames";
     public static final String WINDOWS = "/windows";
-    public static final String NEW_WINDOW = "/windows/new";
     public static final String DRAG_AND_DROP = "/drag_and_drop";
     public static final String HOVERS = "/hovers";
 

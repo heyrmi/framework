@@ -4,7 +4,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import ra.hul.framework.core.constants.Endpoints;
-import ra.hul.framework.web.utils.WaitUtils;
 
 import java.util.List;
 
@@ -21,7 +20,6 @@ public class HoverPage extends BasePage {
 
     @Step("Hover over profile at index: {index}")
     public HoverPage hoverOverProfile(int index) {
-        List<WebElement> figureElements = findElements(figures);
         hoverOver(By.cssSelector(".figure:nth-of-type(" + (index + 1) + ") img"));
         return this;
     }

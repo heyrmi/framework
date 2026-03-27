@@ -187,9 +187,4 @@ public abstract class BasePage {
         getDriver().findElement(locator).sendKeys(filePath);
     }
 
-    // ---- Screenshot ----
-
-    public static byte[] captureScreenshot() {
-        return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
-    }
 }

@@ -14,8 +14,4 @@ public final class FrameworkConstants {
     public static final String ANDROID = "android";
     public static final String IOS = "ios";
 
-    // Paths
-    public static final String SCREENSHOT_PATH = "target/screenshots/";
-    public static final String ALLURE_RESULTS_PATH = "target/allure-results";
-    public static final String DOWNLOAD_DIR = "target/downloads";
 }
