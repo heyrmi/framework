@@ -47,14 +47,12 @@ src/
   main/java/ra/hul/framework/
     core/
       config/          ConfigManager           -- 4-level config resolution
-      constants/       FrameworkConstants       -- Browser, platform, path constants
+      constants/       FrameworkConstants       -- Browser and platform constants
                        Endpoints               -- URL path constants
                        TimeoutConstants         -- Wait durations from config
       listeners/       AllureTestListener       -- Screenshot on failure
                        RetryAnalyzer            -- Configurable retry logic
                        RetryTransformer         -- Auto-applies retry to all tests
-      utils/           JsonUtils                -- Jackson serialize/deserialize
-                       ScreenshotUtils          -- Capture to bytes/file/base64
 
     web/
       driver/          BrowserStrategy          -- Sealed interface (Chrome, Firefox, Edge)
@@ -69,7 +67,6 @@ src/
 
     api/
       client/          ApiClient                -- REST client with Allure filter
-                       ApiRequestBuilder        -- Fluent builder for complex requests
       models/          User, PostPayload        -- Lombok POJOs
 
     mobile/
@@ -118,7 +115,7 @@ src/
 | **ThreadLocal** | `DriverManager`, `AppiumDriverManager` | Each thread gets an isolated driver instance, enabling parallel execution without shared state. |
 | **Page Object Model** | `BasePage` + page classes | Encapsulates UI locators and interactions. Tests never reference raw `By` locators. |
 | **Screen Object Model** | `BaseScreen` + screen classes | Same principle as POM, applied to mobile screens with Appium-specific actions. |
-| **Builder** | `ApiRequestBuilder`, Lombok `@Builder` | Fluent construction of complex API requests and data objects. |
+| **Builder** | Lombok `@Builder` on POJOs | Fluent construction of data objects. |
 | **Template Method** | `BasePage.isLoaded()`, base test classes | Defines a skeleton (init driver, run test, quit driver) while subclasses supply the specifics. |
 | **Observer** | `AllureTestListener`, `RetryTransformer` | Reacts to test lifecycle events (failure screenshots, automatic retry) without modifying test code. |
 
@@ -338,7 +335,7 @@ Actions > Test Automation > Run workflow
 
 ### Adding a New API Test
 
-1. Use the existing `ApiClient` for standard CRUD. Use `ApiRequestBuilder` for non-standard requests.
+1. Use the existing `ApiClient` for standard CRUD.
 2. Create POJOs in `ra.hul.framework.api.models` with `@Data @Builder @NoArgsConstructor @AllArgsConstructor`.
 3. If contract testing is needed, add a JSON schema to `src/test/resources/schemas/`.
 4. Create the test class in `ra.hul.tests.api` extending `BaseApiTest`.
