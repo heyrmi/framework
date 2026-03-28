@@ -1,4 +1,5 @@
 [![Test Automation](https://github.com/heyrmi/framework/actions/workflows/test-automation.yml/badge.svg)](https://github.com/heyrmi/framework/actions/workflows/test-automation.yml)
+[![Appium Preview](https://img.shields.io/badge/Appium-Demo-blue?logo=appium)](https://drive.google.com/file/d/18kbzRp8npspdhUVHMBLv8FZ1q_Guvore/view?usp=sharing)
 
 # Full Stack SDET Framework
 
