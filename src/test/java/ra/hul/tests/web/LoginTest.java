@@ -25,7 +25,7 @@ public class LoginTest extends BaseWebTest {
                 .clickLogin();
 
         SecurePage securePage = new SecurePage();
-        Assert.assertTrue(securePage.getFlashMessage().contains("You logged into a secure areaa!"));
+        Assert.assertTrue(securePage.getFlashMessage().contains("You logged into a secure area!"));
         Assert.assertTrue(securePage.isLogoutButtonDisplayed());
     }
 
