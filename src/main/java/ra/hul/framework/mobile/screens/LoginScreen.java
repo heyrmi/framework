@@ -68,11 +68,11 @@ public class LoginScreen extends BaseScreen {
     }
 
     public boolean isSuccessDialogDisplayed() {
-        return isDisplayed(successTitle);
+        return waitUntilDisplayed(okButton);
     }
 
     @Override
     public boolean isLoaded() {
-        return isDisplayed(emailField);
+        return waitUntilDisplayed(emailField);
     }
 }

@@ -81,4 +81,18 @@ public abstract class BaseScreen {
     protected void scrollUp() {
         GestureUtils.scrollUp(getDriver());
     }
+
+    /**
+     * Waits for an element to become visible (up to the configured explicit wait timeout).
+     * Use this in isLoaded() checks where a screen transition may still be in progress.
+     */
+    protected boolean waitUntilDisplayed(By locator) {
+        try {
+            MobileWaitUtils.waitForVisible(locator);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }

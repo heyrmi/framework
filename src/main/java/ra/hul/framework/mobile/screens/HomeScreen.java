@@ -48,6 +48,6 @@ public class HomeScreen extends BaseScreen {
 
     @Override
     public boolean isLoaded() {
-        return isDisplayed(homeTab);
+        return waitUntilDisplayed(homeTab);
     }
 }

@@ -8,11 +8,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import ra.hul.framework.web.driver.DriverManager;
 
 /**
- * TestNG listener that captures screenshots on test failure
- * and attaches them to Allure reports.
+ * TestNG listener that captures screenshots on test failure and attaches them to Allure reports.
+ * Retrieves the driver from ITestResult attributes set by base test classes.
  */
 public class AllureTestListener implements ITestListener {
 
@@ -31,7 +30,12 @@ public class AllureTestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         log.error("Failed: {} - {}", result.getMethod().getMethodName(), result.getThrowable().getMessage());
-        attachWebScreenshot();
+        Object driver = result.getAttribute("driver");
+        if (driver instanceof WebDriver webDriver) {
+            attachScreenshot(webDriver);
+        } else {
+            log.debug("No driver available for screenshot (likely an API test)");
+        }
     }
 
     @Override
@@ -40,13 +44,7 @@ public class AllureTestListener implements ITestListener {
     }
 
     @Attachment(value = "Failure Screenshot", type = "image/png")
-    private byte[] attachWebScreenshot() {
-        try {
-            WebDriver driver = DriverManager.getDriver();
-            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        } catch (Exception e) {
-            log.debug("No web driver available for screenshot (likely an API test)");
-            return null;
-        }
+    private byte[] attachScreenshot(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

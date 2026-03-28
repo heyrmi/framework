@@ -13,7 +13,7 @@ import ra.hul.tests.base.BaseWebTest;
 public class LoginTest extends BaseWebTest {
 
     @Test(groups = {"smoke", "regression"},
-          description = "Verify successful login with valid credentials")
+            description = "Verify successful login with valid credentials")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validates that a user can log in with valid credentials and sees the secure area")
     @Story("Login")
@@ -25,12 +25,12 @@ public class LoginTest extends BaseWebTest {
                 .clickLogin();
 
         SecurePage securePage = new SecurePage();
-        Assert.assertTrue(securePage.getFlashMessage().contains("You logged into a secure area!"));
+        Assert.assertTrue(securePage.getFlashMessage().contains("You logged into a secure areaa!"));
         Assert.assertTrue(securePage.isLogoutButtonDisplayed());
     }
 
     @Test(groups = {"regression"},
-          description = "Verify logout after successful login")
+            description = "Verify logout after successful login")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Logout")
     public void login_thenLogout_shouldReturnToLoginPage() {
@@ -44,8 +44,8 @@ public class LoginTest extends BaseWebTest {
     }
 
     @Test(groups = {"regression"},
-          description = "Data-driven: verify error messages for invalid credentials",
-          dataProvider = "invalidCredentials")
+            description = "Data-driven: verify error messages for invalid credentials",
+            dataProvider = "invalidCredentials")
     @Severity(SeverityLevel.NORMAL)
     @Story("Login Validation")
     public void login_invalidData_shouldShowError(String user, String pass, String expectedMsg) {

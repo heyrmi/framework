@@ -34,6 +34,6 @@ public class FormScreen extends BaseScreen {
 
     @Override
     public boolean isLoaded() {
-        return isDisplayed(textInput);
+        return waitUntilDisplayed(textInput);
     }
 }

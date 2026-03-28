@@ -34,6 +34,6 @@ public class SwipeScreen extends BaseScreen {
 
     @Override
     public boolean isLoaded() {
-        return isDisplayed(swipeScreenTitle);
+        return waitUntilDisplayed(swipeScreenTitle);
     }
 }

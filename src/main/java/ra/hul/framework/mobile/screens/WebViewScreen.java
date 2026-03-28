@@ -45,6 +45,6 @@ public class WebViewScreen extends BaseScreen {
 
     @Override
     public boolean isLoaded() {
-        return isDisplayed(webViewTitle);
+        return isWebViewAvailable();
     }
 }
